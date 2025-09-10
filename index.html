@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Quiz MAMANGGQOE</title>
+  <title>DCS Quiz (Emerson) — 100 Multiple Choice + 20 True/False (EN) - Corrected Answers</title>
   <style>
     :root{--bg:#0b1220;--card:#0f1724;--accent:#06b6d4;--accent-2:#10b981;--text:#e6eef8;--muted:#9aa8b7}
     *{box-sizing:border-box}
@@ -51,11 +51,11 @@
     <header>
       <div style="width:52px;height:52px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#012">DCS</div>
       <div>
-        <h1>DCS Quiz (Emerson) — 100 Multiple Choice + 20 True/False</h1>
+        <h1>DCS Quiz (Emerson) — 100 Multiple Choice + 20 True/False (Corrected)</h1>
         <div class="meta">
           <div class="badge">Topics: DCS, Emerson Ovation, Measurement, Communication</div>
           <div class="badge">Mode: Research & Test</div>
-          <div class="badge">Visual feedback for correct/incorrect • Shuffle on research</div>
+          <div class="badge">Correct answers updated to factual values</div>
         </div>
       </div>
     </header>
@@ -118,7 +118,7 @@
 
         <div class="card">
           <strong>Notes</strong>
-          <div class="small" style="margin-top:8px">After answering, the system shows visual feedback (green/red) then jumps to the next question.</div>
+          <div class="small" style="margin-top:8px">All MCQ correct answers were reviewed and corrected to factual values; TF statements verified.</div>
           <div style="margin-top:12px" class="small">Click "Research" to reshuffle question order and restart scoring (results before reshuffle can be downloaded).</div>
         </div>
 
@@ -128,74 +128,75 @@
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div>Copyright &copy; DCS Quiz • Auto-generated — for research & practice</div>
-        <div class="small">Version: 1.0 • 120 questions</div>
+        <div class="small">Version: 1.1 • 120 questions • Answers corrected</div>
       </div>
     </footer>
   </div>
 
   <script>
-    // ===================== QUESTION POOL (curated) =====================
-    // We'll create a curated pool of MCQs and TF statements, then build a 100 MCQ + 20 TF quiz.
+    // ===================== CORRECTED QUESTION POOL =====================
+    // Each MCQ now includes an explicit correct index 'a' matching the factual answer.
     const mcqPool = [
-      {q:'What does DCS stand for in industrial control systems?', choices:['Distributed Control System','Direct Control Server','Digital Control Suite','Device Communication Service']},
-      {q:'Which company provides the Ovation DCS commonly used in power plants?', choices:['Emerson','Honeywell','Siemens','Schneider Electric']},
-      {q:'Which is the standard current loop signal used for transmitters?', choices:['0-10 V','1-5 V','4-20 mA','0-20 mA']},
-      {q:'HART protocol communicates concurrently over which signal?', choices:['Modbus TCP','RS-232','4-20 mA analog loop','Ethernet']},
-      {q:'FOUNDATION Fieldbus is best described as which type of communication?', choices:['Point-to-point analog','Serial RS-485','Deterministic digital bus','Wireless mesh network']},
-      {q:'What is the main difference between accuracy and precision?', choices:['Accuracy is systematic bias, precision is random error','Accuracy is closeness to true value, precision is repeatability','Precision is calibration, accuracy is resolution','There is no difference']},
-      {q:'Which sensor type is commonly used to measure temperature in DCS?', choices:['Load cell','RTD (PT100)','LVDT','Hall effect sensor']},
-      {q:'What is the typical role of a transmitter in a 4-20 mA loop?', choices:['To boost voltage','To convert sensor output to a standard signal','To store data locally','To supply power to PLC']},
-      {q:'Modbus TCP uses which transport protocol?', choices:['UDP','TCP/IP','Serial RS-232','Bluetooth']},
-      {q:'What does PID stand for in control systems?', choices:['Proportional-Integral-Derivative','Pulse-Integral-Derivative','Process-Input-Device','Power-Input-Dump']},
-      {q:'Integral reset in PID controllers helps to?', choices:['Reduce overshoot','Eliminate steady-state offset','Increase noise','Slow actuator']},
-      {q:'FOUNDATION Fieldbus H1 typically operates at what speed?', choices:['31.25 kbps','10 Mbps','100 Mbps','1 Gbps']},
-      {q:'What is the purpose of calibrating a transmitter?', choices:['To replace the sensor','To adjust linearity and accuracy','To increase process pressure','To change wiring']},
-      {q:'An advantage of 4-20 mA loop is?', choices:['Unaffected by cable resistance','Low linearity','Noise immunity and open-circuit detection','Cheaper than voltage signals']},
-      {q:'What does a valve positioner do?', choices:['Regulate power to PLC','Manually move an actuator','Control valve position according to control signal','Measure process pressure']},
-      {q:'Controller redundancy primarily provides?', choices:['Faster processing','Reduced wiring cost','Higher system availability during failures','Fewer sensors required']},
-      {q:'HART stands for?', choices:['Highway Addressable Remote Transducer','Hardware Automated Remote Telemetry','Hybrid Analog Remote Transmitter','High Accuracy Remote Telemetry']},
-      {q:'What is Emerson AMS mainly used for?', choices:['Asset management and device calibration','Motor directive control','User management in DCS','Long-term historian storage']},
-      {q:'A loop isolator is used to?', choices:['Increase loop voltage','Protect against ground loops and interference','Replace the transmitter','Improve sensor accuracy']},
-      {q:'Rangeability of a flowmeter means?', choices:['Operating temperature range','Ratio of maximum to minimum measurable flow','ADC resolution','Signal noise level']},
-      {q:'Linear characteristic of a sensor implies?', choices:['Output inversely proportional to input','Output constant','Output proportional to input','Random output']},
-      {q:'Smart transmitters typically can do?', choices:['Only change voltage','Digital communication, diagnostics, and HART configuration','Drive actuators directly','Replace PLC logic']},
-      {q:'Deadband in control refers to?', choices:['Physical valve travel','Small PV change that does not cause controller action','Communication latency','Reference voltage']},
-      {q:'Point level switches are used to?', choices:['Measure continuous level','Detect on/off level conditions','Measure density','Control flow rate']},
-      {q:'What is bumpless transfer in PID context?', choices:['A method to avoid transients when switching controllers or setpoints','A way to increase integral action','A calibration step','A hardware procedure']},
-      {q:'Why store process signals in a historian?', choices:['Backup power','Trend analysis and long-term storage','To reduce signal noise','To reduce IO count']},
-      {q:'Alarm shelving in a DCS does what?', choices:['Permanently deletes alarm','Temporarily suppresses an alarm with acknowledgement','Increases alarm priority','Disables input']},
-      {q:'Sensor transient response matters for?', choices:['Power capacity','How fast the sensor follows process changes','Max voltage output','Number of wires']},
-      {q:'Vortex flowmeters are suitable for measuring?', choices:['Particle concentration','Gases and liquids with turbulent flow','Electrical current','High vacuum pressure']},
-      {q:'What does "burn" mean for HART transmitters?', choices:['Burning a material','Uploading configuration to transmitter EEPROM via HART','Measuring temperature','Increasing signal range']},
-      {q:'Pressure transmitters are commonly connected to process using?', choices:['Twisted pair cable directly','Direct digital inputs','Impulse piping (tubing) and impulse isolation','Wireless only']},
-      {q:'Fail-safe design for a valve means?', choices:['Valve stops in current position on failure','Valve moves to safe position on failure (e.g., closed or open)','Valve self-calibrates','Valve reduces flow gradually']},
-      {q:'What is the purpose of signal grounding and shielding?', choices:['Increase signal amplitude','Reduce electromagnetic interference and noise','Cool down transmitters','Provide backup power']},
-      {q:'An LVDT sensor measures?', choices:['Temperature','Linear displacement','Flow rate','Pressure']},
-      {q:'What is the typical unit for flow measurement by turbine flowmeter?', choices:['Ohms','Liters per minute or m3/h','Kelvin','Pascal']},
-      {q:'What is "auto-tune" for a PID controller?', choices:['Automatic tuning of PID parameters based on process response','Automatic restart after power loss','Automatic alarm generation','Automatic historian backup']},
-      {q:'Digital twin in process control refers to?', choices:['A duplicate PLC hardware','A virtual model of the process used for analysis and testing','A backup controller','A sensor redundancy scheme']},
-      {q:'What does RTD stand for?', choices:['Resistor Temperature Device','Resistance Temperature Detector','Real-time Transducer Device','Remote Temperature Drive']},
-      {q:'What is a common material for RTD sensing element?', choices:['Platinum (PT100)','Copper tubing','Silicon rubber','Glass']},
-      {q:'What is the main advantage of Ethernet-based I/O?', choices:['Lower latency than all fieldbuses','Simpler point-to-point analog wiring','Higher bandwidth, easier integration with IT networks','Requires no configuration']},
-      {q:'What is "scan time" in a DCS?', choices:['Time for an operator shift','Time taken for control algorithm to execute through IO and logic','Time to calibrate a transmitter','Network latency only']},
-      {q:'What is "mean time between failures" (MTBF)?', choices:['Average repair time','Average time between system failures','Time to failure for first unit only','Time to replace hardware']},
-      {q:'What does "HMI" stand for?', choices:['Hardware Management Interface','Human-Machine Interface','High-speed Measurement Instrument','Host Monitoring Infrastructure']},
-      {q:'What is the role of a PLC vs DCS?', choices:['PLC is for small discrete control, DCS for continuous process control and large-scale integration','PLC always replaces DCS','DCS is only for safety systems','There is no difference']},
-      {q:'What is "faceplate" in DCS HMI?', choices:['A physical plate on the control panel','A graphical control widget representing a device (valve, pump) on HMI','An access keycard','A hardware license file']},
-      {q:'What is the typical purpose of a snapshot/trending tool?', choices:['To redesign IO wiring','To view process variable trends over time for analysis','To generate alarms only','To configure fieldbus devices']},
-      {q:'Why use transmitter trim/calibration in the field?', choices:['To change fieldbus address','To adjust zero/span and ensure accurate readings','To increase loop current','To create backups']},
-      {q:'What is OPC UA used for?', choices:['Physical wiring of sensors','Secure, platform-independent data exchange between automation systems and IT','Old serial communication','Power distribution control']},
-      {q:'What is "loop tuning"?', choices:['Wiring the loop','Setting PID parameters to achieve desired response','Assigning IO addresses','Naming tags']},
-      {q:'What is a "tag" in DCS?', choices:['A physical label on sensor','A unique identifier for a process variable or device in the system','A network packet','A calibration file']},
-      {q:'What is a common cause of measurement drift?', choices:['Stable environment','Aging sensors, fouling, temperature effects','Too much calibration','Using digital signals']},
-      {q:'What is a "pressure transmitter with 3-valve manifold" used for?', choices:['Measuring differential pressure with isolation and calibration ease','For mounting on the wall','For wireless transmission','For power conditioning']},
-      {q:'What is "clogging" in impulse piping and how to avoid it?', choices:['Data overflow','Build-up of process material; use proper impulse piping design and isolation valves','Electrical short','Overheating']},
-      {q:'Why is routine loop checking important during startup?', choices:['To increase wiring length','To ensure correct wiring, calibration and functioning before commissioning','To reduce number of devices','To speed up historian']},
-      {q:'What is the typical action when an instrument fails calibration?', choices:['Ignore it','Repair, recalibrate, or replace the instrument according to maintenance policy','Change controller setpoint','Remove all alarms']},
-      {q:'What is "SIS" in process plants?', choices:['Safety Instrumented System','Simple Instrument Setup','Signal Integration Service','Switch Input System']},
-      {q:'What is the role of sequence of events (SOE) recorder?', choices:['Recording operator logins only','Logging time-stamped events (alarms, trips) for post-incident analysis','Storing control logic','Managing licenses']}
+      {q:'What does DCS stand for in industrial control systems?', choices:['Distributed Control System','Direct Control Server','Digital Control Suite','Device Communication Service'], a:0},
+      {q:'Which company provides the Ovation DCS commonly used in power plants?', choices:['Emerson','Honeywell','Siemens','Schneider Electric'], a:0},
+      {q:'Which is the standard current loop signal used for transmitters?', choices:['0-10 V','1-5 V','4-20 mA','0-20 mA'], a:2},
+      {q:'HART protocol communicates concurrently over which signal?', choices:['Modbus TCP','RS-232','4-20 mA analog loop','Ethernet'], a:2},
+      {q:'FOUNDATION Fieldbus is best described as which type of communication?', choices:['Point-to-point analog','Serial RS-485','Deterministic digital bus','Wireless mesh network'], a:2},
+      {q:'What is the main difference between accuracy and precision?', choices:['Accuracy is systematic bias, precision is random error','Accuracy is closeness to true value, precision is repeatability','Precision is calibration, accuracy is resolution','There is no difference'], a:1},
+      {q:'Which sensor type is commonly used to measure temperature in DCS?', choices:['Load cell','RTD (PT100)','LVDT','Hall effect sensor'], a:1},
+      {q:'What is the typical role of a transmitter in a 4-20 mA loop?', choices:['To boost voltage','To convert sensor output to a standard signal','To store data locally','To supply power to PLC'], a:1},
+      {q:'Modbus TCP uses which transport protocol?', choices:['UDP','TCP/IP','Serial RS-232','Bluetooth'], a:1},
+      {q:'What does PID stand for in control systems?', choices:['Proportional-Integral-Derivative','Pulse-Integral-Derivative','Process-Input-Device','Power-Input-Dump'], a:0},
+      {q:'Integral action in PID controllers helps to?', choices:['Reduce overshoot','Eliminate steady-state offset','Increase noise','Slow actuator'], a:1},
+      {q:'FOUNDATION Fieldbus H1 typically operates at what speed?', choices:['31.25 kbps','10 Mbps','100 Mbps','1 Gbps'], a:0},
+      {q:'What is the purpose of calibrating a transmitter?', choices:['To replace the sensor','To adjust linearity and accuracy','To increase process pressure','To change wiring'], a:1},
+      {q:'An advantage of 4-20 mA loop is?', choices:['Unaffected by cable resistance','Low linearity','Noise immunity and open-circuit detection','Cheaper than voltage signals'], a:2},
+      {q:'What does a valve positioner do?', choices:['Regulate power to PLC','Manually move an actuator','Control valve position according to control signal','Measure process pressure'], a:2},
+      {q:'Controller redundancy primarily provides?', choices:['Faster processing','Reduced wiring cost','Higher system availability during failures','Fewer sensors required'], a:2},
+      {q:'HART stands for?', choices:['Highway Addressable Remote Transducer','Hardware Automated Remote Telemetry','Hybrid Analog Remote Transmitter','High Accuracy Remote Telemetry'], a:0},
+      {q:'What is Emerson AMS mainly used for?', choices:['Asset management and device calibration','Motor directive control','User management in DCS','Long-term historian storage'], a:0},
+      {q:'A loop isolator is used to?', choices:['Increase loop voltage','Protect against ground loops and interference','Replace the transmitter','Improve sensor accuracy'], a:1},
+      {q:'Rangeability of a flowmeter means?', choices:['Operating temperature range','Ratio of maximum to minimum measurable flow','ADC resolution','Signal noise level'], a:1},
+      {q:'Linear characteristic of a sensor implies?', choices:['Output inversely proportional to input','Output constant','Output proportional to input','Random output'], a:2},
+      {q:'Smart transmitters typically can do?', choices:['Only change voltage','Digital communication, diagnostics, and HART configuration','Drive actuators directly','Replace PLC logic'], a:1},
+      {q:'Deadband in control refers to?', choices:['Physical valve travel','Small PV change that does not cause controller action','Communication latency','Reference voltage'], a:1},
+      {q:'Point level switches are used to?', choices:['Measure continuous level','Detect on/off level conditions','Measure density','Control flow rate'], a:1},
+      {q:'What is bumpless transfer in PID context?', choices:['A method to avoid transients when switching controllers or setpoints','A way to increase integral action','A calibration step','A hardware procedure'], a:0},
+      {q:'Why store process signals in a historian?', choices:['Backup power','Trend analysis and long-term storage','To reduce signal noise','To reduce IO count'], a:1},
+      {q:'Alarm shelving in a DCS does what?', choices:['Permanently deletes alarm','Temporarily suppresses an alarm with acknowledgement','Increases alarm priority','Disables input'], a:1},
+      {q:'Sensor transient response matters for?', choices:['Power capacity','How fast the sensor follows process changes','Max voltage output','Number of wires'], a:1},
+      {q:'Vortex flowmeters are suitable for measuring?', choices:['Particle concentration','Gases and liquids with turbulent flow','Electrical current','High vacuum pressure'], a:1},
+      {q:'What does "burn" mean for HART transmitters?', choices:['Burning a material','Uploading configuration to transmitter EEPROM via HART','Measuring temperature','Increasing signal range'], a:1},
+      {q:'Pressure transmitters are commonly connected to process using?', choices:['Twisted pair cable directly','Direct digital inputs','Impulse piping (tubing) and impulse isolation','Wireless only'], a:2},
+      {q:'Fail-safe design for a valve means?', choices:['Valve stops in current position on failure','Valve moves to safe position on failure (e.g., closed or open)','Valve self-calibrates','Valve reduces flow gradually'], a:1},
+      {q:'What is the purpose of signal grounding and shielding?', choices:['Increase signal amplitude','Reduce electromagnetic interference and noise','Cool down transmitters','Provide backup power'], a:1},
+      {q:'An LVDT sensor measures?', choices:['Temperature','Linear displacement','Flow rate','Pressure'], a:1},
+      {q:'What is the typical unit for flow measurement by turbine flowmeter?', choices:['Ohms','Liters per minute or m3/h','Kelvin','Pascal'], a:1},
+      {q:'What is "auto-tune" for a PID controller?', choices:['Automatic tuning of PID parameters based on process response','Automatic restart after power loss','Automatic alarm generation','Automatic historian backup'], a:0},
+      {q:'Digital twin in process control refers to?', choices:['A duplicate PLC hardware','A virtual model of the process used for analysis and testing','A backup controller','A sensor redundancy scheme'], a:1},
+      {q:'What does RTD stand for?', choices:['Resistor Temperature Device','Resistance Temperature Detector','Real-time Transducer Device','Remote Temperature Drive'], a:1},
+      {q:'What is a common material for RTD sensing element?', choices:['Platinum (PT100)','Copper tubing','Silicon rubber','Glass'], a:0},
+      {q:'What is the main advantage of Ethernet-based I/O?', choices:['Lower latency than all fieldbuses','Simpler point-to-point analog wiring','Higher bandwidth, easier integration with IT networks','Requires no configuration'], a:2},
+      {q:'What is "scan time" in a DCS?', choices:['Time for an operator shift','Time taken for control algorithm to execute through IO and logic','Time to calibrate a transmitter','Network latency only'], a:1},
+      {q:'What is "mean time between failures" (MTBF)?', choices:['Average repair time','Average time between system failures','Time to failure for first unit only','Time to replace hardware'], a:1},
+      {q:'What does "HMI" stand for?', choices:['Hardware Management Interface','Human-Machine Interface','High-speed Measurement Instrument','Host Monitoring Infrastructure'], a:1},
+      {q:'What is the role of a PLC vs DCS?', choices:['PLC is for small discrete control, DCS for continuous process control and large-scale integration','PLC always replaces DCS','DCS is only for safety systems','There is no difference'], a:0},
+      {q:'What is "faceplate" in DCS HMI?', choices:['A physical plate on the control panel','A graphical control widget representing a device (valve, pump) on HMI','An access keycard','A hardware license file'], a:1},
+      {q:'What is the typical purpose of a snapshot/trending tool?', choices:['To redesign IO wiring','To view process variable trends over time for analysis','To generate alarms only','To configure fieldbus devices'], a:1},
+      {q:'Why use transmitter trim/calibration in the field?', choices:['To change fieldbus address','To adjust zero/span and ensure accurate readings','To increase loop current','To create backups'], a:1},
+      {q:'What is OPC UA used for?', choices:['Physical wiring of sensors','Secure, platform-independent data exchange between automation systems and IT','Old serial communication','Power distribution control'], a:1},
+      {q:'What is "loop tuning"?', choices:['Wiring the loop','Setting PID parameters to achieve desired response','Assigning IO addresses','Naming tags'], a:1},
+      {q:'What is a "tag" in DCS?', choices:['A physical label on sensor','A unique identifier for a process variable or device in the system','A network packet','A calibration file'], a:1},
+      {q:'What is a common cause of measurement drift?', choices:['Stable environment','Aging sensors, fouling, temperature effects','Too much calibration','Using digital signals'], a:1},
+      {q:'What is a "pressure transmitter with 3-valve manifold" used for?', choices:['Measuring differential pressure with isolation and calibration ease','For mounting on the wall','For wireless transmission','For power conditioning'], a:0},
+      {q:'What is "clogging" in impulse piping and how to avoid it?', choices:['Data overflow','Build-up of process material; use proper impulse piping design and isolation valves','Electrical short','Overheating'], a:1},
+      {q:'Why is routine loop checking important during startup?', choices:['To increase wiring length','To ensure correct wiring, calibration and functioning before commissioning','To reduce number of devices','To speed up historian'] , a:1},
+      {q:'What is the typical action when an instrument fails calibration?', choices:['Ignore it','Repair, recalibrate, or replace the instrument according to maintenance policy','Change controller setpoint','Remove all alarms'], a:1},
+      {q:'What is "SIS" in process plants?', choices:['Safety Instrumented System','Simple Instrument Setup','Signal Integration Service','Switch Input System'], a:0},
+      {q:'What is the role of sequence of events (SOE) recorder?', choices:['Recording operator logins only','Logging time-stamped events (alarms, trips) for post-incident analysis','Storing control logic','Managing licenses'], a:1}
     ];
 
+    // True/False pool (verified)
     const tfPool = [
       {s:'HART communication can run on the same pair as a 4-20 mA analog signal.', t:true},
       {s:'FOUNDATION Fieldbus H1 operates at gigabit Ethernet speeds.', t:false},
@@ -221,39 +222,25 @@
 
     // ===================== BUILD QUIZ =====================
     function buildQuiz(){
-      // create 100 MCQ by sampling pool (allow repeats if pool smaller), then balance answers A/B/C/D round-robin
       const mcqCount = 100;
       const tfCount = 20;
       const mcqs = [];
-      // shuffle mcqPool copy
-      const pool = [...mcqPool];
-      // ensure we have at least some variety; if not enough, we'll cycle
+      // Cycle through pool to reach 100 items (allow repetition but keep factual 'a')
       for(let i=0;i<mcqCount;i++){
-        const item = pool[i % pool.length];
-        // clone
-        mcqs.push({q:item.q, choices:[...item.choices]});
+        const base = mcqPool[i % mcqPool.length];
+        mcqs.push({q:base.q, choices:[...base.choices], a:base.a});
       }
-      // assign answers round-robin to ensure balanced A/B/C/D
-      const choicesCount = 4;
-      for(let i=0;i<mcqs.length;i++){
-        mcqs[i].a = i % choicesCount; // 0..3
-      }
-
-      // build TF set (use pool order, shuffle)
       const tfs = tfPool.slice(0, tfCount);
-      // if pool smaller, cycle - but our pool has 20
-
       return {mcqs,tfs};
     }
 
-    // ===================== APP STATE =====================
     let quiz = buildQuiz();
-    let combined = []; // will be objects {type:'mcq'|'tf', q, choices?, a?, t?}
+    let combined = [];
     function combineAndShuffle(){
       combined = [];
       quiz.mcqs.forEach(m=>combined.push({type:'mcq', q:m.q, choices:m.choices, a:m.a}));
       quiz.tfs.forEach((f,i)=>combined.push({type:'tf', q:f.s, t:f.t}));
-      // shuffle
+      // shuffle using Fisher-Yates
       for(let i=combined.length-1;i>0;i--){
         const j=Math.floor(Math.random()*(i+1));[combined[i],combined[j]]=[combined[j],combined[i]];
       }
@@ -263,7 +250,7 @@
     combineAndShuffle();
 
     // user results
-    const results = Array(combined.length).fill(null); // {answer, correct, time}
+    const results = Array(combined.length).fill(null);
     let idx = 0;
     let score=0, correct=0, wrong=0, skipped=0;
 
@@ -275,7 +262,6 @@
       optsEl.innerHTML = '';
       if(idx<0) idx=0;
       if(idx>=combined.length){
-        // quiz finished
         qEl.textContent = 'Quiz finished — download your results or review answers.';
         qTypeEl.textContent = 'Finished';
         document.getElementById('qIndex').textContent = combined.length;
@@ -287,7 +273,6 @@
       qEl.textContent = cur.q;
 
       if(cur.type==='mcq'){
-        // render 4 options
         const letters=['A','B','C','D'];
         cur.choices.forEach((c,i)=>{
           const b = document.createElement('div');
@@ -300,7 +285,6 @@
           optsEl.appendChild(b);
         });
       } else {
-        // true/false buttons
         const tBtn = document.createElement('div'); tBtn.className='opt'; tBtn.tabIndex=0; tBtn.onclick=()=>selectTF(true,tBtn); tBtn.onkeypress=(e)=>{if(e.key==='Enter')selectTF(true,tBtn)}; tBtn.innerHTML='<strong>TRUE</strong>';
         const fBtn = document.createElement('div'); fBtn.className='opt'; fBtn.tabIndex=0; fBtn.onclick=()=>selectTF(false,fBtn); fBtn.onkeypress=(e)=>{if(e.key==='Enter')selectTF(false,fBtn)}; fBtn.innerHTML='<strong>FALSE</strong>';
         const spacer=document.createElement('div'); spacer.style.gridColumn='1 / -1'; spacer.style.height='8px';
@@ -316,7 +300,6 @@
       const opts = document.querySelectorAll('.opt');
       opts.forEach(o=>o.classList.add('disabled'));
       if(choiceIndex===correctIndex){
-        // correct
         elem.classList.add('correct'); elem.classList.add('animate-correct');
         score += 1; correct +=1; results[idx]={answer:choiceIndex, correct:true, time:Date.now()};
         document.getElementById('score').textContent = score;
@@ -324,13 +307,11 @@
         document.getElementById('correctCount').textContent = correct;
       } else {
         elem.classList.add('wrong'); elem.classList.add('animate-wrong');
-        // highlight correct
         const optsAll = document.querySelectorAll('.opt');
         if(optsAll[correctIndex]){ optsAll[correctIndex].classList.add('correct'); }
         wrong +=1; results[idx]={answer:choiceIndex, correct:false, time:Date.now()};
         document.getElementById('wrongCount').textContent = wrong;
       }
-      // auto advance after short delay
       setTimeout(()=>{ idx++; renderQuestion(); updateProgress(); }, 700);
     }
 
@@ -359,20 +340,15 @@
     }
 
     function reshuffle(){
-      // reshuffle combined and reset progression but keep previous results in a separate storage (allow download)
-      // store previous snapshot
       const snapshot = {time:Date.now(), results:results.slice(), score, correct, wrong, skipped};
-      // create new combined
       combineAndShuffle();
-      // reset state
       idx=0; score=0; correct=0; wrong=0; skipped=0;
       for(let i=0;i<combined.length;i++) results[i]=null;
       renderQuestion(); updateProgress();
-      alert('Questions reshuffled. Previous results saved in browser session until reload if you download them.');
+      alert('Questions reshuffled. Previous results snapshot saved (download before reshuffle if needed).');
     }
 
     function openReview(){
-      // show a simple review modal using window.open with JSON summary
       const summary = {total:combined.length, score, correct, wrong, skipped, results};
       const w = window.open('', '_blank', 'width=600,height=600');
       w.document.write('<pre style="white-space:pre-wrap;word-wrap:break-word;font-family:monospace">'+JSON.stringify(summary,null,2)+'</pre>');
@@ -389,8 +365,6 @@
 
     // initial render
     renderQuestion(); updateProgress();
-
-    // keyboard: N to skip, R to reshuffle
     window.addEventListener('keydown', (e)=>{
       if(e.key==='n' || e.key==='N') skipQuestion();
       if(e.key==='r' || e.key==='R') reshuffle();
